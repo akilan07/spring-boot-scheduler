@@ -1,8 +1,9 @@
 version: 2.1
 
 jobs:
-  build:
+  build_and_test:
     docker:
-      - image: jamesdbloom/docker-java8-maven
+      - image: openjdk:8-jdk-alpine
     steps:
-      - run: mvn clean install
+      - checkout
+      - run: ./gradlew build
