@@ -3,7 +3,6 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: openjdk:8-jdk-alpine
+      - image: jamesdbloom/docker-java8-maven
     steps:
-      - checkout
       - run: mvn clean install
