@@ -7,3 +7,11 @@ jobs:
     steps:
       - checkout
       - run: ./gradlew build
+      - store_test_results:
+          path: build/test-results
+
+workflows:
+  version: 2
+  spring_boot_Scheduler_cicd_workflow:
+    jobs:
+      - build_and_test
